@@ -1,7 +1,7 @@
 package Controllers
 
 import (
-    "Api/Models"
+    "github.com/LayssonENS/go-desafio/Models"
     "encoding/json"
     "net/http"
     "io/ioutil"

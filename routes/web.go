@@ -2,10 +2,10 @@ package routes
 
 import (
     "github.com/gorilla/mux"
-    "Api/Controllers"
     "log"
     "fmt"
-    "net/http" 
+    "net/http"
+    "github.com/LayssonENS/go-desafio/Controllers" 
 )
 
 func ConfigurarRotas()  {

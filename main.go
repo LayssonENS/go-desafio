@@ -1,7 +1,7 @@
 package main
 
 import (
-    "Api/routes"
+    "github.com/LayssonENS/go-desafio/routes" 
 )
 
 func main() {
