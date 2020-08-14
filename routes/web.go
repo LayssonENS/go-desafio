@@ -5,7 +5,7 @@ import (
     "Api/Controllers"
     "log"
     "fmt"
-    "net/http"
+    "net/http" 
 )
 
 func ConfigurarRotas()  {
