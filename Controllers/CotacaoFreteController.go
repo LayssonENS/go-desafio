@@ -12,7 +12,7 @@ import (
 func BuscarFrete(w http.ResponseWriter, r *http.Request) {
     
     /*Pegando parâmetro passado via GET*/
-    cnpj := mux.Vars(r)
+	cnpj := mux.Vars(r)
     
     /* Valida se Cnpj é válido e retorna caso não for*/
     if !brdoc.IsCNPJ(cnpj["cnpj"]) {
