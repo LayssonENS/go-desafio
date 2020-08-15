@@ -1,22 +1,21 @@
 package routes
 
 import (
-    "github.com/gorilla/mux"
-    "log"
-    "fmt"
-    "net/http"
-    "github.com/LayssonENS/go-desafio/Controllers" 
+	"fmt"
+	"log"
+	"net/http"
+
+	"github.com/LayssonENS/go-desafio/controllers"
+	"github.com/gorilla/mux"
 )
 
-func ConfigurarRotas()  {
-    router := mux.NewRouter()
-    router.HandleFunc("/cnpj/{cnpj}", Controllers.BuscarCnpj).Methods("GET")
-    router.HandleFunc("/posts", Controllers.BuscarFrete).Methods("POST")
+/* ConfigurarRotas endPoint*/
+func ConfigurarRotas() {
+	router := mux.NewRouter()
+	router.HandleFunc("/cnpj/{cnpj}", controllers.BuscarCnpj).Methods("GET")
+	router.HandleFunc("/posts", controllers.BuscarFrete).Methods("POST")
 
-    fmt.Println("Servdor executando")
-    log.Fatal(http.ListenAndServe(":3000", router))
+	fmt.Println("Servdor executando")
+	log.Fatal(http.ListenAndServe(":3000", router))
 
 }
-
-
-

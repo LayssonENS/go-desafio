@@ -1,9 +1,9 @@
 package main
 
 import (
-    "github.com/LayssonENS/go-desafio/routes" 
+	"github.com/LayssonENS/go-desafio/routes"
 )
 
 func main() {
-    routes.ConfigurarRotas()
+	routes.ConfigurarRotas()
 }

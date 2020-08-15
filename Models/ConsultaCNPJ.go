@@ -1,6 +1,6 @@
-package Models
+package models
 
-/*Struct dos campos de retorno da api*/
+/*ConsultaCnpj Struct dos campos de retorno da api*/
 type ConsultaCnpj struct {
 	DataSituacao          string       `json:"data_situacao"`
 	Nome                  string       `json:"nome"`
@@ -40,51 +40,51 @@ type Atividades struct {
 	Code string `json:"code"`
 }
 
-/*Billing*/
+/*Billing estrutura*/
 type Billing struct {
 	Free     bool `json:"free"`
 	Database bool `json:"database"`
 }
 
-/*Extra*/
+/*Extra estrutura*/
 type Extra struct {
 }
 
-/*Sócios*/
+/*Qsa estrutura*/
 type Qsa struct {
 	Qual string `json:"qual"`
 	Nome string `json:"nome"`
 }
 
-/*Retorno JSON personalizado*/
-type ResponsEempresa struct {
-	Cnpj               string               `json:"cnpj"`
-	UltimaAtualizacao  string               `json:"ultima_atualizacao"`
-	Abertura           string               `json:"abertura"`
-	Nome               string               `json:"nome"`
-	Fantasia           string               `json:"fantasia"`
-	Status             string               `json:"status"`
-	Tipo               string               `json:"tipo"`
-	Situacao           string               `json:"situacao"`
-	CapitalSocial      string               `json:"capital_social"`
-	Endereco           Endereco         	`json:"endereco"`
-	Contato            Contato           	`json:"contato"`
-	AtividadePrincipal AtividadePrincipal  `json:"atividade_principal"`
+/*ResponseEmpresa Retorno JSON personalizado*/
+type ResponseEmpresa struct {
+	Cnpj               string             `json:"cnpj"`
+	UltimaAtualizacao  string             `json:"ultima_atualizacao"`
+	Abertura           string             `json:"abertura"`
+	Nome               string             `json:"nome"`
+	Fantasia           string             `json:"fantasia"`
+	Status             string             `json:"status"`
+	Tipo               string             `json:"tipo"`
+	Situacao           string             `json:"situacao"`
+	CapitalSocial      string             `json:"capital_social"`
+	Endereco           Endereco           `json:"endereco"`
+	Contato            Contato            `json:"contato"`
+	AtividadePrincipal AtividadePrincipal `json:"atividade_principal"`
 }
 
-/*Atividade Principal*/
+/*AtividadePrincipal estrutura*/
 type AtividadePrincipal struct {
 	Text string `json:"text"`
 	Code string `json:"code"`
 }
 
-/*Contato*/
+/*Contato estrutura*/
 type Contato struct {
 	Telefone string `json:"telefone"`
 	Email    string `json:"email"`
 }
 
-/*Endereço da empresa*/
+/*Endereco da empresa*/
 type Endereco struct {
 	Bairro      string `json:"bairro"`
 	Logradouro  string `json:"logradouro"`
@@ -95,8 +95,7 @@ type Endereco struct {
 	Complemento string `json:"complemento"`
 }
 
-/*Estrutura para mensagem com erro*/
+/*RespostaComErro estrutura de erro*/
 type RespostaComErro struct {
 	Erro string `json:"erro"`
 }
-
