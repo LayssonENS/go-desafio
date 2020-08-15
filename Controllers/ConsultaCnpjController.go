@@ -12,6 +12,7 @@ import (
 
 /*BuscarCnpj Função para retornar dados da empresa */
 func BuscarCnpj(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 
 	/*Pegando parâmetro passado via GET*/
 	cnpj := mux.Vars(r)
