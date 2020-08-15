@@ -5,9 +5,9 @@
 
 # Instalar Dependências 
 
+- go get github.com/LayssonENS/go-desafio
 - go get github.com/gorilla/mux
 - go get github.com/Nhanderu/brdoc
-- go get github.com/LayssonENS/go-desafio
 
 
 # Rotas
