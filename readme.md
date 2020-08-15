@@ -3,7 +3,7 @@
 -   GO
 
 
-# Instalar Dependências 
+# Dependências e Projeto 
 
 - go get github.com/LayssonENS/go-desafio
 - go get github.com/gorilla/mux
