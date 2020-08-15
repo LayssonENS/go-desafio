@@ -40,23 +40,23 @@ type Atividades struct {
 	Code string `json:"code"`
 }
 
-/*Billing estrutura*/
-type Billing struct {
-	Free     bool `json:"free"`
-	Database bool `json:"database"`
-}
-
-/*Extra estrutura*/
-type Extra struct {
-}
-
 /*Qsa estrutura*/
 type Qsa struct {
 	Qual string `json:"qual"`
 	Nome string `json:"nome"`
 }
 
-/*ResponseEmpresa Retorno JSON personalizado*/
+/*Extra estrutura*/
+type Extra struct {
+}
+
+/*Billing estrutura*/
+type Billing struct {
+	Free     bool `json:"free"`
+	Database bool `json:"database"`
+}
+
+/*ResponseEmpresa monta a estrutura*/
 type ResponseEmpresa struct {
 	Cnpj               string             `json:"cnpj"`
 	UltimaAtualizacao  string             `json:"ultima_atualizacao"`
@@ -72,16 +72,9 @@ type ResponseEmpresa struct {
 	AtividadePrincipal AtividadePrincipal `json:"atividade_principal"`
 }
 
-/*AtividadePrincipal estrutura*/
-type AtividadePrincipal struct {
-	Text string `json:"text"`
-	Code string `json:"code"`
-}
-
-/*Contato estrutura*/
-type Contato struct {
-	Telefone string `json:"telefone"`
-	Email    string `json:"email"`
+/*DadosEmpresa Retorno JSON personalizado*/
+type DadosEmpresa struct {
+	Empresa ResponseEmpresa
 }
 
 /*Endereco da empresa*/
@@ -93,6 +86,18 @@ type Endereco struct {
 	Municipio   string `json:"municipio"`
 	Uf          string `json:"uf"`
 	Complemento string `json:"complemento"`
+}
+
+/*Contato estrutura*/
+type Contato struct {
+	Telefone string `json:"telefone"`
+	Email    string `json:"email"`
+}
+
+/*AtividadePrincipal estrutura*/
+type AtividadePrincipal struct {
+	Text string `json:"text"`
+	Code string `json:"code"`
 }
 
 /*RespostaComErro estrutura de erro*/

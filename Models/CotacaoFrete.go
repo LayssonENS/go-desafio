@@ -1,53 +1,49 @@
 package models
 
-// CalculaFreteRequest estrutura para cálculo de frete na api da frete rapido
-type CalculaFreteRequest struct {
-	Remetente        Remetente    `json:"remetente,omitempty"`
-	Destinatario     Destinatario `json:"destinatario,omitempty"`
-	Volumes          []Volume     `json:"volumes,omitempty"`
-	CodigoPlataforma string       `json:"codigo_plataforma,omitempty"`
-	Token            string       `json:"token,omitempty"`
+/*DadosRequestCotacao - estrutura para dados recebidos via JSON POST*/
+type DadosRequestCotacao struct {
+	Remetente        Remetente    `json:"remetente"`
+	Destinatario     Destinatario `json:"destinatario"`
+	Volumes          []Volume     `json:"volumes"`
+	CodigoPlataforma string       `json:"codigo_plataforma"`
+	Token            string       `json:"token"`
 }
 
-// Destinatario informações do destinatario
-type Destinatario struct {
-	TipoPessoa        int64           `json:"tipo_pessoa,omitempty"`
-	CnpjCpf           string          `json:"cnpj_cpf,omitempty"`
-	InscricaoEstadual string          `json:"inscricao_estadual,omitempty"`
-	Endereco          EnderecoEmpresa `json:"endereco,omitempty"`
-}
-
-// EnderecoEmpresa informações do endereco do destinatario
-type EnderecoEmpresa struct {
-	CEP string `json:"cep,omitempty"`
-}
-
-// Remetente informações do remetente do frete
+/*Remetente - estrutura do remetente */
 type Remetente struct {
-	CNPJ string `json:"cnpj,omitempty"`
+	CNPJ string `json:"cnpj"`
 }
 
-// Volume informações dos itens que faz parte do frete
+/*Destinatario - estrutura do esdereco do destinatario */
+type Destinatario struct {
+	Endereco EnderecoEmpresa `json:"endereco"`
+}
+
+/*EnderecoEmpresa - Estrutura do endereco da empresa */
+type EnderecoEmpresa struct {
+	CEP string `json:"cep"`
+}
+
+/*Volume - estrutura dos dados dos volumes */
 type Volume struct {
-	Tipo           int64   `json:"tipo,omitempty"`
-	Sku            string  `json:"sku,omitempty"`
-	Descricao      string  `json:"descricao,omitempty"`
-	Quantidade     int64   `json:"quantidade,omitempty"`
-	Altura         float64 `json:"altura,omitempty"`
-	Largura        float64 `json:"largura,omitempty"`
-	Comprimento    float64 `json:"comprimento,omitempty"`
-	Peso           float64 `json:"peso,omitempty"`
-	Valor          float64 `json:"valor,omitempty"`
-	VolumesProduto int64   `json:"volumes_produto,omitempty"`
+	Tipo           int64   `json:"tipo"`
+	Sku            string  `json:"sku"`
+	Descricao      string  `json:"descricao"`
+	Quantidade     int64   `json:"quantidade"`
+	Altura         float64 `json:"altura"`
+	Largura        float64 `json:"largura"`
+	Comprimento    float64 `json:"comprimento"`
+	Peso           float64 `json:"peso"`
+	Valor          float64 `json:"valor"`
+	VolumesProduto int64   `json:"volumes_produto"`
 }
 
-// CotacaoResponse struct de calculo de frete na api da frete rapido
-type CotacaoResponse struct {
-	TokenOferta     string           `json:"token_oferta"`
+/*CotacoesTransportadoras - estrutura das cotações  */
+type CotacoesTransportadoras struct {
 	Transportadoras []Transportadora `json:"transportadoras"`
 }
 
-// Transportadora item da cotação
+/*Transportadora - estrutura dos destalhes das transportadoras*/
 type Transportadora struct {
 	Oferta           int64   `json:"oferta"`
 	Cnpj             string  `json:"cnpj"`
@@ -59,4 +55,17 @@ type Transportadora struct {
 	Validade         string  `json:"validade"`
 	CustoFrete       float64 `json:"custo_frete"`
 	PrecoFrete       float64 `json:"preco_frete"`
+}
+
+/*EstruturaCotacao  - Estrutura final para response*/
+type EstruturaCotacao struct {
+	Transportadoras []EstruturaTransportadora `json:"transportadoras"`
+}
+
+/*EstruturaTransportadora - detalhes personalizados das transportadoras */
+type EstruturaTransportadora struct {
+	Nome         string  `json:"nome"`
+	Servico      string  `json:"servico"`
+	PrazoEntrega int64   `json:"prazo_entrega"`
+	PrecoFrete   float64 `json:"preco_frete"`
 }

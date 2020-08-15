@@ -38,7 +38,7 @@ func BuscarCnpj(w http.ResponseWriter, r *http.Request) {
 	json.Unmarshal(responseConsulta, &responseObject)
 
 	/*JSON Personalizado*/
-	respostaJSON := models.ResponseEmpresa{Cnpj: responseObject.Cnpj,
+	respostaJSON := models.DadosEmpresa{Empresa: models.ResponseEmpresa{Cnpj: responseObject.Cnpj,
 		UltimaAtualizacao: responseObject.UltimaAtualizacao,
 		Abertura:          responseObject.Abertura,
 		Nome:              responseObject.Nome,
@@ -64,6 +64,7 @@ func BuscarCnpj(w http.ResponseWriter, r *http.Request) {
 			Text: responseObject.AtividadePrincipal[0].Text,
 			Code: responseObject.AtividadePrincipal[0].Code,
 		},
+	},
 	}
 
 	/*Retorna dados personalizados*/
